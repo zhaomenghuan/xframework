@@ -65,19 +65,19 @@ class TemplateCompiler {
   }
 
   parseHtml(html) {
-    var handler = new htmlParser.DefaultHandler(
-        function(err, dom) {
-          if (err) {
-            console.error(err);
-          }
-        },
-        {
-          enforceEmptyTags: true,
-          ignoreWhitespace: true,
-          verbose: false
+    let handler = new htmlParser.DefaultHandler(
+      (err, dom) => {
+        if (err) {
+          console.error(err);
         }
-      ),
-      parser = new htmlParser.Parser(handler);
+      },
+      {
+        enforceEmptyTags: true,
+        ignoreWhitespace: true,
+        verbose: false
+      }
+    );
+    let parser = new htmlParser.Parser(handler);
 
     // parse html
     parser.parseComplete(html);

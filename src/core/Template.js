@@ -213,9 +213,9 @@ function convertParsedDomToVTree(dom, scope, ignoreRepeat) {
       keys = Object.keys(orgAttrs);
       while ((key = keys[i++])) {
         attrs[key] = evals.attrs[key] ? evals.attrs[key](scope) : orgAttrs[key];
-        if (tmplHelper[key]) {
-          hooks[key] = hook(tmplHelper[key], attrs[key]); // TODO enhancement
-        }
+        // if (tmplHelper[key]) {
+        //   hooks[key] = hook(tmplHelper[key], attrs[key]); // TODO enhancement
+        // }
       }
 
       // flatten children

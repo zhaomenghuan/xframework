@@ -13,7 +13,7 @@ export default {
    * @returns {ClayElement}
    */
   create: function(name, proto) {
-    var defaults = {
+    let defaults = {
       /**
        * @private
        * @property {Document} _doc
@@ -23,34 +23,39 @@ export default {
         : document.currentScript
           ? document.currentScript.ownerDocument
           : document,
+
       /**
        * @private
        * @method {Function} _created
        */
-      _created: helper.isFunction(proto.createdCallback)
-        ? proto.createdCallback
+      _created: helper.isFunction(proto.created)
+        ? proto.created
         : helper.noop,
+
       /**
        * @private
        * @method {Function} _attached
        */
-      _attached: helper.isFunction(proto.attachedCallback)
-        ? proto.attachedCallback
+      _attached: helper.isFunction(proto.attached)
+        ? proto.attached
         : helper.noop,
+
       /**
        * @private
        * @method {Function} _detached
        */
-      _detached: helper.isFunction(proto.detachedCallback)
-        ? proto.detachedCallback
+      _detached: helper.isFunction(proto.detached)
+        ? proto.detached
         : helper.noop,
+
       /**
        * @private
        * @method {Function} _attrChanged
        */
-      _attrChanged: helper.isFunction(proto.attributeChangedCallback)
-        ? proto.attributeChangedCallback
+      _attrChanged: helper.isFunction(proto.attrChanged)
+        ? proto.attrChanged
         : helper.noop,
+
       /**
        * @private
        * @property {String} _html
@@ -63,7 +68,7 @@ export default {
       root: null,
 
       /**
-       * @property {ClayTemplate} template
+       * @property {Template} template
        */
       template: null,
 
@@ -205,10 +210,14 @@ var ElementImpl = {
     this.createShadowRoot();
     this.template = template.create(this._html, this.data);
     this.root = this.template.createElement(this._doc);
+
     if (!this.root) {
       this.root = this._doc.createElement("div");
     }
     // set root element
+    let style = this._doc.querySelector('style');
+    this.shadowRoot.appendChild(style);
+    
     this.shadowRoot.appendChild(this.root);
     this.template.drawLoop(this.root);
 

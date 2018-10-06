@@ -29,7 +29,13 @@
 </script>
 ```
 
+## TODO
+
+- 事件支持
+- 指令支持
+
 ## 参考
 
+- [slim.js](https://github.com/slimjs/slim.js)
 - [polymer](https://www.polymer-project.org/)
 - [Claylump](https://github.com/ahomu/Claylump)
