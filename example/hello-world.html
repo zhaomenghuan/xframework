@@ -1,0 +1,20 @@
+<template x-element="hello-world">
+  <div>
+    <h1>Hello World</h1>
+    <h2>{{name}}</h2>
+  </div>
+</template>
+
+<script>
+  XF.component('hello-world', {
+    data: {
+      name: 'xframework'
+    },
+    createdCallback: function () {
+      console.log('created');
+      this.data.name = 'xframework 1.0';
+      // update (diff & patch) DOM!
+      this.invalidate();
+    },
+  });
+</script>

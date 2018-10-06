@@ -1,0 +1,29 @@
+{
+  "name": "xframework",
+  "version": "1.0.0",
+  "description": "基于 Web Components 标准的前端框架",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  },
+  "scripts": {
+    "dev": "webpack --mode development && webpack-dev-server",
+    "build": "webpack --mode production"
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "dependencies": {
+    "htmlparser": "^1.7.7",
+    "virtual-dom": "^2.1.1"
+  }
+}
