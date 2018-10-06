@@ -8,25 +8,46 @@
 
 ```html
 <template x-element="hello-world">
-  <div>
+  <div class="text" onclick="alert('点击')">
     <h1>Hello World</h1>
-    <h2>{{name}}</h2>
+    <h2>name: {{name}}</h2>
+    <h3>version: {{version}}</h3>
+    <p>{{message}}</p>
   </div>
 </template>
 
 <script>
   XF.component('hello-world', {
     data: {
-      name: 'xframework'
+      name: 'xframework',
+      version: '0.0.1'
     },
-    createdCallback: function () {
+    created: function () {
       console.log('created');
-      this.data.name = 'xframework 1.0';
+
+      this.data.message = '面向"常青树"浏览器的前端框架';
+
       // update (diff & patch) DOM!
       this.invalidate();
     },
+    attached: function () {
+      console.log('attached');
+      this.root.style.backgroundColor = "#eee";
+    },
+    attrChanged: function () {
+      console.log('attrChanged');
+    },
+    detached: function () {
+      console.log('detached');
+    }
   });
 </script>
+
+<style>
+  :host {
+    color: #383838;
+  }
+</style>
 ```
 
 ## TODO
