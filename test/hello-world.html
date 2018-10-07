@@ -1,8 +1,7 @@
 <template x-element="hello-world">
   <div class="text" onclick="alert('点击')">
-    <h1>Hello World</h1>
-    <h2>name: {{name}}</h2>
-    <h3>version: {{version}}</h3>
+    <h2>name: {{framework.name}}</h2>
+    <h3>version: {{framework.version}}</h3>
     <p>{{message}}</p>
   </div>
 </template>
@@ -10,16 +9,16 @@
 <script>
   XF.component('hello-world', {
     data: {
-      name: 'xframework',
-      version: '0.0.1'
+      framework: {
+        name: 'xframework',
+        version: '0.0.1'
+      },
+      message: ''
     },
     created: function () {
       console.log('created');
-
+      this.data.framework.version = '0.0.2';
       this.data.message = '面向"常青树"浏览器的前端框架';
-
-      // update (diff & patch) DOM!
-      this.invalidate();
     },
     attached: function () {
       console.log('attached');

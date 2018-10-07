@@ -1,5 +1,6 @@
 "use strict";
 
+import Observer from "./Observer";
 import helper from "./Helper";
 import template from "./Template";
 
@@ -151,6 +152,9 @@ var ElementImpl = {
         data[key] = helper.clone(data[key]);
       }
     }
+
+    // Observer data
+    this.data = new Observer(data, this);
   },
 
   /**
@@ -209,15 +213,15 @@ var ElementImpl = {
     // create virtual template & actual dom
     this.createShadowRoot();
     this.template = template.create(this._html, this.data);
-    this.root = this.template.createElement(this._doc);
 
+    this.root = this.template.createElement(this._doc);
     if (!this.root) {
       this.root = this._doc.createElement("div");
     }
+
     // set root element
     let style = this._doc.querySelector('style');
     this.shadowRoot.appendChild(style);
-    
     this.shadowRoot.appendChild(this.root);
     this.template.drawLoop(this.root);
 

@@ -6,7 +6,6 @@ import * as patch from "virtual-dom/patch";
 import * as create from "virtual-dom/create-element";
 
 import helper from "./Helper";
-import tmplHelper from "./TemplateHelper";
 
 window.requestAnimationFrame =
   window.requestAnimationFrame ||

@@ -1,11 +1,14 @@
 class Observer {
   /**
    * 创建数据观察者实例
-   * @param {Object} data 
+   * @param {Object} data
    */
-  constructor(data) {
+  constructor(data, element) {
     if (!data || typeof data !== "object") {
       return;
+    }
+    if (element) {
+      this.element = element;
     }
     return this.proxy(data);
   }
@@ -20,6 +23,8 @@ class Observer {
         return data[key];
       },
       set: (target, key, value) => {
+        // update (diff & patch) DOM!
+        this.element.invalidate();
         return Reflect.set(data, key, value);
       }
     });

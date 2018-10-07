@@ -1,20 +1,13 @@
 {
   "name": "xframework",
-  "version": "1.0.0",
-  "description": "基于 Web Components 标准的前端框架",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "面向\"常青树\"浏览器的前端组件化开发框架",
+  "main": "src/index.js",
   "directories": {
-    "example": "example",
-    "lib": "lib"
+    "test": "test"
   },
-  "scripts": {
-    "dev": "webpack --mode development && webpack-dev-server",
-    "build": "webpack --mode production"
-  },
-  "author": "",
-  "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.3",
+    "@babel/core": "^7.1.2",
     "babel-loader": "^8.0.4",
     "babel-preset-env": "^1.7.0",
     "webpack": "^4.20.2",
@@ -25,5 +18,25 @@
     "@webcomponents/webcomponentsjs": "^2.1.3",
     "htmlparser": "^1.7.7",
     "virtual-dom": "^2.1.1"
-  }
+  },
+  "scripts": {
+    "dev": "webpack --mode development && webpack-dev-server",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhaomenghuan/xframework.git"
+  },
+  "keywords": [
+    "xframework",
+    "webcomponnets",
+    "proxy",
+    "virtual-dom"
+  ],
+  "author": "zhaomenghuan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhaomenghuan/xframework/issues"
+  },
+  "homepage": "https://github.com/zhaomenghuan/xframework#readme"
 }
