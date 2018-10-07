@@ -130,7 +130,7 @@ function getExtendee(name) {
 }
 
 /**
- * @implements ClayElement
+ * @implements Element
  */
 var ElementImpl = {
   /**

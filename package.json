@@ -1,6 +1,6 @@
 {
   "name": "xframeworkjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "面向\"常青树\"浏览器的前端组件化开发框架",
   "main": "src/index.js",
   "directories": {

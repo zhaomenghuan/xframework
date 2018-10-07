@@ -1,8 +1,6 @@
 # XFramework
 
-面向"常青树"浏览器的前端组件化开发框架。
-
-Proxy + WebComponnets + Virtual DOM，更快更彻底的组件化开发。
+面向 evergreen browsers 的前端组件化开发框架，基于 Proxy + Web Componnets + Virtual DOM 的技术栈，运行效率更高组件化更彻底。
 
 ## 开始
 
@@ -104,7 +102,8 @@ hello-world.html：
 ### 监听路由
 
 ```js
-document.querySelector("router-view")
+document
+  .querySelector("router-view")
   .addEventListener("routeChangeSuccess", function(e) {
     console.log(e.detail);
   });
