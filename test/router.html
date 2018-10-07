@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>XFramework-Router</title>
+  <script>
+    if ('registerElement' in document
+      && 'createShadowRoot' in HTMLElement.prototype
+      && 'import' in document.createElement('link')
+      && 'content' in document.createElement('template')) {
+      // We're using a browser with native WC support!
+    } else {
+      document.write('<script src="./lib/webcomponents-lite.js"><\/script>')
+    }
+  </script>
+  <script src="./xframework.js"></script>
+</head>
+
+<body>
+  <!-- hashchange -->
+  <a href="#/home">首页</a>
+  <a href="#/component">组件</a>
+  <a href="#/params/123?name=test">带参数的路由</a>
+
+  <router-view>
+    <!-- matches an exact path -->
+    <route-view path="/home" import="/pages/home-page.html"></route-view>
+    <route-view path="/component" import="/pages/component-page.html"></route-view>
+    <route-view path="/params/:pid" import="/pages/params-page.html"></route-view>
+  </router-view>
+
+  <script>
+    document.querySelector('router-view').addEventListener('routeChangeSuccess', function(e) {
+      // console.log(e.detail);
+    });
+  </script>
+</body>
+
+</html>

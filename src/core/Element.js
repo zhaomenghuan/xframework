@@ -4,7 +4,7 @@ import Observer from "./Observer";
 import helper from "./Helper";
 import template from "./Template";
 
-var REGISTRY_CLAY_PROTOTYPES = {};
+let REGISTRY_CLAY_PROTOTYPES = {};
 
 export default {
   /**
@@ -29,9 +29,7 @@ export default {
        * @private
        * @method {Function} _created
        */
-      _created: helper.isFunction(proto.created)
-        ? proto.created
-        : helper.noop,
+      _created: helper.isFunction(proto.created) ? proto.created : helper.noop,
 
       /**
        * @private
@@ -84,7 +82,7 @@ export default {
 
     // dom ready required
     helper.ready(function() {
-      var template = proto._doc.querySelector('[x-element="' + name + '"]');
+      var template = proto._doc.querySelector('template');
       proto._html = template ? template.innerHTML : "";
     });
 
@@ -220,8 +218,10 @@ var ElementImpl = {
     }
 
     // set root element
-    let style = this._doc.querySelector('style');
-    this.shadowRoot.appendChild(style);
+    let style = this._doc.querySelector("style");
+    if (style != null) {
+      this.shadowRoot.appendChild(style);
+    }
     this.shadowRoot.appendChild(this.root);
     this.template.drawLoop(this.root);
 

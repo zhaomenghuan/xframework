@@ -19,7 +19,7 @@ npm install xframeworkjs --save
 hello-world.html：
 
 ```html
-<template x-element="hello-world">
+<template>
   <div class="text" onclick="alert('点击')">
     <h2>name: {{framework.name}}</h2>
     <h3>version: {{framework.version}}</h3>
@@ -82,13 +82,37 @@ hello-world.html：
 </html>
 ```
 
-## TODO
+## 路由
 
-- 事件支持
-- 指令支持
+### 定义路由
+
+```html
+<router-view>
+  <!-- matches an exact path -->
+  <route-view path="/home" import="/pages/home-page.html"></route-view>
+  <route-view path="/component" import="/pages/component-page.html"></route-view>
+  <route-view path="/params/:pid" import="/pages/params-page.html"></route-view>
+</router-view>
+```
+
+### 路由导航
+
+```html
+<a href="#/home">首页</a>
+```
+
+### 监听路由
+
+```js
+document.querySelector("router-view")
+  .addEventListener("routeChangeSuccess", function(e) {
+    console.log(e.detail);
+  });
+```
 
 ## 参考
 
 - [polymer](https://www.polymer-project.org/)
 - [slim.js](https://github.com/slimjs/slim.js)
 - [Claylump](https://github.com/ahomu/Claylump)
+- [app-router](https://github.com/erikringsmuth/app-router)

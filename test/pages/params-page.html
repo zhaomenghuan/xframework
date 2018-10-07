@@ -1,0 +1,22 @@
+<template>
+  <div>
+    <h1>带参数的路由</h1>
+    <p>params: {{params}}</p>
+    <p>query: {{query}}</p>
+  </div>
+</template>
+
+<script>
+  XF.component('params-page', {
+    created: function () {
+      // let url = XF.router.util.parseUrl(location);
+      // console.log(url);
+    },
+    attached() {
+      let route = XF.router.currentRoute;
+      console.log(route);
+      this.data.params = JSON.stringify(route.params);
+      this.data.query = JSON.stringify(route.query);
+    }
+  });
+</script>
