@@ -4,6 +4,14 @@
 
 Proxy + WebComponnets + Virtual DOM，更快更彻底的组件化开发。
 
+## 开始
+
+npm 安装：
+
+```
+npm install xframeworkjs --save
+```
+
 ## 组件
 
 ### 定义组件
