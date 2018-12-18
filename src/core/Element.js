@@ -1,8 +1,8 @@
 "use strict";
 
-import Observer from "./Observer";
-import helper from "./Helper";
-import template from "./Template";
+import Observer from "./observer";
+import helper from "./helper";
+import template from "./template";
 
 let REGISTRY_CLAY_PROTOTYPES = {};
 

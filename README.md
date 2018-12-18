@@ -1,6 +1,6 @@
 # XFramework
 
-面向 evergreen browsers 的前端组件化开发框架，基于 Proxy + Web Componnets + Virtual DOM 的技术栈，运行效率更高组件化更彻底。
+面向"常青树"浏览器的前端组件化开发框架，基于 Proxy + Web Componnets + Virtual DOM 的技术栈，运行效率更高组件化更彻底。
 
 ## 开始
 
@@ -78,35 +78,6 @@ hello-world.html：
 </body>
 
 </html>
-```
-
-## 路由
-
-### 定义路由
-
-```html
-<router-view>
-  <!-- matches an exact path -->
-  <route-view path="/home" import="/pages/home-page.html"></route-view>
-  <route-view path="/component" import="/pages/component-page.html"></route-view>
-  <route-view path="/params/:pid" import="/pages/params-page.html"></route-view>
-</router-view>
-```
-
-### 路由导航
-
-```html
-<a href="#/home">首页</a>
-```
-
-### 监听路由
-
-```js
-document
-  .querySelector("router-view")
-  .addEventListener("routeChangeSuccess", function(e) {
-    console.log(e.detail);
-  });
 ```
 
 ## 参考

@@ -1,34 +1,34 @@
 <template x-element="hello-world">
   <div class="text" onclick="alert('点击')">
-    <h2>name: {{framework.name}}</h2>
-    <h3>version: {{framework.version}}</h3>
-    <p>{{message}}</p>
+    <h2>name: {{ framework.name }}</h2>
+    <h3>version: {{ framework.version }}</h3>
+    <p>{{ message }}</p>
   </div>
 </template>
 
 <script>
-  XF.component('hello-world', {
+  XF.component("hello-world", {
     data: {
       framework: {
-        name: 'xframework',
-        version: '0.0.1'
+        name: "xframework",
+        version: "0.0.1"
       },
-      message: ''
+      message: ""
     },
-    created: function () {
-      console.log('created');
-      this.data.framework.version = '0.0.2';
+    created: function() {
+      console.log("created");
+      this.data.framework.version = "0.0.2";
       this.data.message = '面向"常青树"浏览器的前端框架';
     },
-    attached: function () {
-      console.log('attached');
+    attached: function() {
+      console.log("attached");
       this.root.style.backgroundColor = "#eee";
     },
-    attrChanged: function () {
-      console.log('attrChanged');
+    attrChanged: function() {
+      console.log("attrChanged");
     },
-    detached: function () {
-      console.log('detached');
+    detached: function() {
+      console.log("detached");
     }
   });
 </script>
@@ -36,5 +36,9 @@
 <style>
   :host {
     color: #383838;
+    height: 100%;
+  }
+  h2 {
+    margin: 0;
   }
 </style>

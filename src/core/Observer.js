@@ -23,8 +23,10 @@ class Observer {
         return data[key];
       },
       set: (target, key, value) => {
-        // update (diff & patch) DOM!
-        this.element.invalidate();
+        if (this.element) {
+          // update (diff & patch) DOM!
+          this.element.invalidate();
+        }
         return Reflect.set(data, key, value);
       }
     });

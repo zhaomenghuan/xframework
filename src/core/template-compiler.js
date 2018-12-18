@@ -1,5 +1,5 @@
 import * as htmlParser from "htmlparser";
-import helper from "./Helper";
+import helper from "./helper";
 
 var REX_INTERPOLATE_SYMBOL = /{{[^{}]+}}/g;
 var REX_REPEAT_SYMBOL = /{{(\w+)\sin\s([\w\.]+)}}/;

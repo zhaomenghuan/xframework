@@ -5,7 +5,7 @@ import * as diff from "virtual-dom/diff";
 import * as patch from "virtual-dom/patch";
 import * as create from "virtual-dom/create-element";
 
-import helper from "./Helper";
+import helper from "./helper";
 
 window.requestAnimationFrame =
   window.requestAnimationFrame ||

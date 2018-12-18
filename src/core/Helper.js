@@ -5,9 +5,9 @@
  * @param {Object} from
  * @param {Boolean} [overwrite]
  * @return {Object}
- */
+ **/
 function mix(to, from, overwrite) {
-  var i = 0,
+  let i = 0,
     keys = Object.keys(from),
     prop;
 
@@ -61,53 +61,6 @@ function uniq(array) {
     }
   }
   return ret;
-}
-
-/**
- * get cached `matchesSelector` method name
- */
-var matcherName;
-function getMatcherName() {
-  if (matcherName) {
-    return matcherName;
-  }
-
-  var list = [
-      "matches",
-      "webkitMatchesSelector",
-      "mozMatchesSelector",
-      "msMatchesSelector"
-    ],
-    proto = HTMLElement.prototype,
-    i = 0,
-    name;
-
-  while ((name = list[i++])) {
-    if (proto[name]) {
-      matcherName = name;
-      return matcherName;
-    }
-  }
-}
-
-/**
- * match element with selector
- *
- * @param {Element} element
- * @param {String} selector
- * @returns {boolean}
- */
-function matchElement(element, selector) {
-  return element[getMatcherName()](selector);
-}
-
-/**
- * @param {*} value
- * @returns {string}
- */
-function toString(value) {
-  var objStr = Object.prototype.toString.call(value);
-  return objStr.slice(objStr.indexOf(" ") + 1, -1);
 }
 
 /**
@@ -222,9 +175,6 @@ export default {
   invoke: invoke,
   toArray: toArray,
   toString: toString,
-
-  matchElement: matchElement,
-
   isString: isString,
   isNumber: isNumber,
   isArray: isArray,

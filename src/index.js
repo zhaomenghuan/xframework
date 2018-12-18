@@ -1,7 +1,6 @@
-import Observer from "./core/Observer";
-import element from "./core/Element";
-import templateCompiler from "./core/TemplateCompiler";
-import Router from "./modules/router/index";
+import Observer from "./core/observer";
+import Element from "./core/element";
+import TemplateCompiler from "./core/template-compiler";
 
 let REGISTRY_CLAY_ELEMENTS = {};
 class XFramework {
@@ -18,7 +17,7 @@ XFramework.config = {
 
 // 运行时
 XFramework.runtime = {
-  compiler: templateCompiler
+  compiler: TemplateCompiler
 };
 
 // 注册组件
@@ -29,7 +28,7 @@ XFramework.component = function(name, proto) {
   }
 
   let options = {
-    prototype: element.create(name, proto)
+    prototype: Element.create(name, proto)
   };
 
   if (proto.extends && !helper.isCustomElementName(proto.extends)) {
@@ -41,9 +40,6 @@ XFramework.component = function(name, proto) {
     options
   );
 };
-
-// 路由组件
-XFramework.router = Router;
 
 if (window != undefined) {
   window.XF = XFramework;
