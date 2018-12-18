@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>XFramework-Observer</title>
+</head>
+
+<body>
+  <script src="./xframework.js"></script>
+  <script type="module">
+    let vm = new XF({
+      data: {
+        name: "XFramework",
+        technology: ["ES6", "Proxy"]
+      }
+    });
+
+    console.log("vm.data", vm.data);
+    console.log("vm.data.name", vm.data.name);
+
+    console.log("-------------------------------");
+
+    console.log("set:\nvm.data.name =\"XFramework-1.0\";\nvm.data.version = \"1.0\";\nvm.data.technology.push(\"webcomponents\");");
+    vm.data.name = "XFramework-1.0";
+    vm.data.version = "1.0";
+    vm.data.technology.push("webcomponents");
+    console.log("vm.data", vm.data);
+    console.log("vm.data.name", vm.data.name);
+  </script>
+</body>
+
+</html>
