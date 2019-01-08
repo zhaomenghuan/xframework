@@ -12,28 +12,17 @@ window.requestAnimationFrame =
   window.mozRequestAnimationFrame ||
   window.webkitRequestAnimationFrame;
 
-var STR_EVAL_FUNCTION_SYMBOL = "__EVAL_FUNCTION__";
-
-export default {
-  /**
-   * @static
-   * @param {String} html
-   * @param {Object} [scope]
-   * @returns {Template}
-   */
-  create: function(html, scope) {
-    return new Template(html, scope);
-  }
-};
+const STR_EVAL_FUNCTION_SYMBOL = "__EVAL_FUNCTION__";
 
 /**
  * @class Template
  */
-class Template {
+export default class Template {
   /**
    *
    * @param {String} html
    * @param {Object} [scope]
+   * @returns {Template}
    * @constructor
    */
   constructor(html, scope = {}) {
@@ -228,13 +217,11 @@ function convertParsedDomToVTree(dom, scope, ignoreRepeat) {
       // create VTree
       return h(
         tag,
-        helper.mix(
-          {
-            attributes: attrs,
-            style: style
-          },
-          hooks
-        ),
+        helper.mix({
+          attributes: attrs,
+          style: style
+        }, 
+        hooks),
         children
       );
 

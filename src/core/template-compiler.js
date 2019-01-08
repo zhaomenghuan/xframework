@@ -1,12 +1,12 @@
 import * as htmlParser from "htmlparser";
 import helper from "./helper";
 
-var REX_INTERPOLATE_SYMBOL = /{{[^{}]+}}/g;
-var REX_REPEAT_SYMBOL = /{{(\w+)\sin\s([\w\.]+)}}/;
-var STR_REPEAT_ATTRIBUTE = "x-repeat";
-var STR_IF_ATTRIBUTE = "x-if";
-var STR_UNLESS_ATTRIBUTE = "x-unless";
-var STR_EVAL_FUNCTION_SYMBOL = "__EVAL_FUNCTION__";
+const REX_INTERPOLATE_SYMBOL = /{{[^{}]+}}/g;
+const REX_REPEAT_SYMBOL = /{{(\w+)\sin\s([\w\.]+)}}/;
+const STR_REPEAT_ATTRIBUTE = "x-repeat";
+const STR_IF_ATTRIBUTE = "x-if";
+const STR_UNLESS_ATTRIBUTE = "x-unless";
+const STR_EVAL_FUNCTION_SYMBOL = "__EVAL_FUNCTION__";
 
 export default {
   /**

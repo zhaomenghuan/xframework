@@ -1,3 +1,5 @@
+"use strict";
+
 class Observer {
   /**
    * 创建数据观察者实例

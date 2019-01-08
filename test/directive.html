@@ -1,0 +1,12 @@
+<template x-element="xf-directive">
+  <div x-if="true">x-if true</div>
+  <div x-if="false">x-if false</div>
+</template>
+
+<script>
+  XF.component("xf-directive", {
+    created: function() {
+      console.log("created");
+    }
+  });
+</script>

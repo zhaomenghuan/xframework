@@ -85,4 +85,3 @@ hello-world.html：
 - [polymer](https://www.polymer-project.org/)
 - [slim.js](https://github.com/slimjs/slim.js)
 - [Claylump](https://github.com/ahomu/Claylump)
-- [app-router](https://github.com/erikringsmuth/app-router)

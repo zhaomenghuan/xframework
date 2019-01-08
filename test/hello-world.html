@@ -1,8 +1,9 @@
 <template x-element="hello-world">
-  <div class="text" onclick="alert('点击')">
+  <div class="text">
     <h2>name: {{ framework.name }}</h2>
     <h3>version: {{ framework.version }}</h3>
     <p>{{ message }}</p>
+    <button onclick="alert('点击')">事件测试</button>
   </div>
 </template>
 
@@ -34,9 +35,10 @@
 </script>
 
 <style>
-  :host {
+  .text {
     color: #383838;
     height: 100%;
+    background-color: #f00;
   }
   h2 {
     margin: 0;

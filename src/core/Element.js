@@ -2,7 +2,7 @@
 
 import Observer from "./observer";
 import helper from "./helper";
-import template from "./template";
+import Template from "./template";
 
 let REGISTRY_CLAY_PROTOTYPES = {};
 
@@ -210,7 +210,7 @@ var ElementImpl = {
   createdCallback() {
     // create virtual template & actual dom
     this.createShadowRoot();
-    this.template = template.create(this._html, this.data);
+    this.template = new Template(this._html, this.data);
 
     this.root = this.template.createElement(this._doc);
     if (!this.root) {
